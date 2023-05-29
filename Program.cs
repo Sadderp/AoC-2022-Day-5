@@ -1,19 +1,15 @@
 ﻿#region Rows
 //All the crate stacks
 var stacks = new List<Stack<char>>() {
-    //Test input stacks
-    /*new Stack<char>(new[] { 'Z', 'N' }),
-    new Stack<char>(new[] { 'M', 'C', 'D' }),
-    new Stack<char>(new[] { 'P' })*/
-    /* 1 */new Stack<char>(new[] { 'H', 'B', 'V', 'W', 'N', 'M', 'L', 'P' }),
-    /* 2 */new Stack<char>(new[] { 'M', 'Q', 'H' }),
-    /* 3 */new Stack<char>(new[] { 'N', 'D', 'B', 'G', 'F', 'Q', 'M', 'L' }),
-    /* 4 */new Stack<char>(new[] { 'Z', 'T', 'F', 'Q', 'M', 'W', 'G' }),
-    /* 5 */new Stack<char>(new[] { 'M', 'T', 'H', 'P' }),
-    /* 6 */new Stack<char>(new[] { 'C', 'B', 'M', 'J', 'D', 'H', 'G', 'T' }),
-    /* 7 */new Stack<char>(new[] { 'M', 'N', 'B', 'F', 'V', 'R' }),
-    /* 8 */new Stack<char>(new[] { 'P', 'L', 'H', 'M', 'R', 'G', 'S' }),
-    /* 9 */new Stack<char>(new[] { 'P', 'D', 'B', 'C', 'N' })
+    new Stack<char>(new[] { 'H', 'B', 'V', 'W', 'N', 'M', 'L', 'P' }),
+    new Stack<char>(new[] { 'M', 'Q', 'H' }),
+    new Stack<char>(new[] { 'N', 'D', 'B', 'G', 'F', 'Q', 'M', 'L' }),
+    new Stack<char>(new[] { 'Z', 'T', 'F', 'Q', 'M', 'W', 'G' }),
+    new Stack<char>(new[] { 'M', 'T', 'H', 'P' }),
+    new Stack<char>(new[] { 'C', 'B', 'M', 'J', 'D', 'H', 'G', 'T' }),
+    new Stack<char>(new[] { 'M', 'N', 'B', 'F', 'V', 'R' }),
+    new Stack<char>(new[] { 'P', 'L', 'H', 'M', 'R', 'G', 'S' }),
+    new Stack<char>(new[] { 'P', 'D', 'B', 'C', 'N' })
 };
 #endregion
 
@@ -44,34 +40,10 @@ if(Part1 == true)
         //moves all the crates
         while(NoMove-- > 0)
         {
-            //Console.WriteLine("Move: " + NoMove);
-            //Console.WriteLine("From: " + NoFrom);
-            //Console.WriteLine("To: " + NoTo);
-
-            //Console.WriteLine("");
-
             stacks[NoTo - 1].Push(stacks[NoFrom - 1].Pop());
-
-            //Console.WriteLine("stacks: ");
-
-            //for(int i = 0; i < stacks.Count; i++)
-            //{
-            //    Console.WriteLine(stacks[i].Count);
-            //}
-
-            //Console.WriteLine("");
         }
-        //Console.WriteLine("");
     }
 
-    //foreach(var row in stacks)
-    //{
-    //    foreach(var item in row)
-    //    {
-    //        Console.WriteLine(item);
-    //    }
-    //    Console.WriteLine("");
-    //}
     //Prints the answer
     Console.WriteLine("Answer part 1: " + string.Join("", stacks.Select(x => x.Peek())));
 }
